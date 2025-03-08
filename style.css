@@ -1,0 +1,221 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url(https://images.unsplash.com/photo-1526356378313-2fd2b55eb865?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D);
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+header {
+  padding: 0.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+}
+header p {
+  line-height: 2;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+main {
+  display: flex;
+  /* flex-wrap: wrap; */
+  align-items: flex-start;
+  justify-content: center;
+  /* gap: 2rem; */
+}
+section {
+  display: flex;
+  align-items: center;
+}
+.main-content {
+  flex-basis: 50%;
+  height: 100%;
+  justify-content: center;
+}
+.circleBG {
+  width: 60%;
+  min-width: 35vw;
+  min-height: 33vw;
+  height: 30vw;
+  border-radius: 50%;
+  background: radial-gradient(#2d2c2c87, #0000002e);
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 5vw;
+  outline: 5px solid white;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.circleBG h2 {
+  font-size: 1.5vw;
+}
+.circleBG h3 {
+  font-size: 1.2vw;
+}
+.circleBG p {
+  font-size: 0.95vw;
+  font-weight: 600;
+}
+form {
+  width: 60%;
+  max-width: 35rem;
+  min-width: 20rem;
+  background: linear-gradient(90deg, #95b1cd, #9fb2c5, #95b1cd);
+  border-radius: 10px;
+  padding: 1em;
+  box-shadow: 0px 0px 20px 3px #7d7d7d;
+}
+fieldset {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+legend {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+input,
+select,
+textarea {
+  display: block;
+  margin: 5px 0;
+  padding: 8px 6px;
+  border-radius: 5px;
+  border: none;
+  /* background-color: #325c7399;
+  color: white; */
+}
+input {
+  width: 100%;
+}
+input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+label {
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+textarea {
+  resize: none;
+  width: 100%;
+}
+input::placeholder,
+textarea::placeholder {
+  font-size: 0.9rem;
+  /* color: white; */
+}
+
+input::file-selector-button {
+  font-weight: bold;
+  color: rgb(255, 255, 255);
+  padding: 0.5em;
+  margin-right: 1em;
+  border: 1px solid rgb(4, 64, 124);
+  border-radius: 6px;
+  background-color: dodgerblue;
+  box-shadow: 3px 3px 3px rgb(5, 44, 83);
+}
+input::file-selector-button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 1px 1px #180704;
+}
+input::file-selector-button:hover {
+  background: linear-gradient(
+    dodgerblue,
+    rgb(96, 172, 247),
+    rgb(103, 172, 241)
+  );
+}
+input[type="radio"] {
+  margin-left: 0.4rem;
+  width: max-content;
+}
+hr {
+  border: 1px solid #1d5185b0;
+}
+.container {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.inline {
+  display: inline-block;
+  width: unset;
+}
+.block {
+  display: block;
+  width: 100%;
+}
+.alignTop {
+  align-items: flex-start;
+  gap: 5px;
+}
+.container fieldset {
+  flex-basis: 49%;
+}
+#tempContainer input {
+  width: 60px;
+}
+#birdBehavior label {
+  margin-right: 15px;
+}
+.columnFlex {
+  flex-direction: column;
+  flex-basis: unset !important;
+  align-items: flex-start;
+}
+fieldset p {
+  text-align: left;
+  margin-top: -2px;
+  font-size: 0.8em;
+}
+.child {
+  padding: 0 5px;
+  justify-content: space-between;
+}
+button {
+  width: 45%;
+  display: inline-block;
+  padding: 10px 5px;
+  border-radius: 5px;
+  border: none;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+  color: white;
+}
+button[type="reset"] {
+  background: #601d12;
+  box-shadow: 3px 3px 3px #180704;
+}
+button[type="submit"] {
+  background: #8ec436;
+  box-shadow: 3px 3px 3px #3a5a05;
+}
+button[type="reset"]:hover {
+  background: linear-gradient(#601d12, #a7311f, #601d12);
+}
+button[type="submit"]:hover {
+  background: linear-gradient(#8ec436, #a6f724, #8ec436);
+}
+#additionalInfo {
+  margin-bottom: 1rem;
+}
+button:active {
+  transform: translate(3px, 3px);
+  box-shadow: 0px 1px 1px #180704;
+}

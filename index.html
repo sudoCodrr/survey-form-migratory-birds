@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form - Mini Project</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <h1>Survey - Migrating birds in Uttar Pradesh</h1>
+        <p>Please fill out this form with the required information</p>
+    </header>
+
+    <main>
+        <section class="main-content">
+            <form action="">
+                <fieldset>
+                    <legend>Observer's Info</legend>
+                    <label for="name">Full Name: <input type="text" placeholder="Enter your name" id="name"
+                            required></label>
+                    <label for="phone">Mobile No: <input type="tel" placeholder="Enter your mobile number"
+                            id="phone"></label>
+                    <label for="email">Email: <input type="email" placeholder="Enter your email" id="email"></label>
+                    <label for="date-time">Date and Time of Observation: <input type="datetime-local"
+                            placeholder="Enter the date and time of observation" id="date-time"></label>
+                </fieldset>
+                <div class="container">
+                    <fieldset>
+                        <label for="weather">Weather Conditions: </label>
+                        <select name="weather" id="weather">
+                            <option value="">Select weather</option>
+                            <option value="1">Sunny</option>
+                            <option value="2">Cloudy</option>
+                            <option value="3">Rainy</option>
+                            <option value="4">Foggy</option>
+                            <option value="5">Rainy</option>
+                        </select>
+                    </fieldset>
+                    <fieldset id="tempContainer">
+                        <label for="temp" class="block">Temperature: </label>
+                        <input type="number" name="temp" id="temp" min=-7 max=122 value="0" class="inline">
+                        <select name="tempUnit" id="tempUnit" class="inline">
+                            <option value="c">C</option>
+                            <option value="f">F</option>
+                        </select>
+                    </fieldset>
+                </div>
+                <hr>
+                <fieldset id="speciesInfo">
+                    <legend>Bird Species Details</legend>
+                    <label for="birdName">Common Name of bird: <input type="text" name="birdName" id="birdName"></label>
+                    <div class="container alignTop">
+                        <fieldset>
+                            <label for="count">Number of Birds Observed: </label>
+                            <select name="count" id="count">
+                                <option value="">Select count</option>
+                                <option value="1">&lt; 10</option>
+                                <option value="2">10 - 20</option>
+                                <option value="3">20 - 50</option>
+                                <option value="4">&gt; 50</option>
+                            </select>
+                        </fieldset>
+                        <fieldset>
+                            <label for="physicalInfo">Color and Physical Features</label>
+                            <textarea name="physicalInfo" id="physicalInfo"
+                                placeholder="Describe physical appearance of the birds sighted" rows="3"></textarea>
+                        </fieldset>
+                    </div>
+                    <fieldset id="birdBehavior">
+                        <legend>Bird Behavior</legend>
+                        <label for="flying"><input type="radio" name="behavior" id="flying" value="Flying"
+                                class="inline">
+                            Flying</label>
+                        <label for="resting">
+                            <input type="radio" name="behavior" id="resting" value="Resting" class="inline">
+                            Resting</label>
+                        <label for="feeding">
+                            <input type="radio" name="behavior" id="feeding" value="Feeding" class="inline">
+                            Feeding</label>
+                        <label for="nesting"><input type="radio" name="behavior" id="nesting" value="Nesting"
+                                class="inline">
+                            Nesting</label>
+                    </fieldset>
+                </fieldset>
+                <hr>
+                <fieldset id="habitatInfo">
+                    <legend>Habitat Information</legend>
+                    <div class="container alignTop">
+                        <fieldset class="container columnFlex child">
+                            <label for="habitat">Type of Habitat? </label>
+                            <select name="habitat" id="habitat">
+                                <option value="">Select</option>
+                                <option value="1">Wetlands</option>
+                                <option value="2">Forest</option>
+                                <option value="3">Grassland</option>
+                                <option value="4">Urban</option>
+                                <option value="5">Agricultural Land</option>
+                                <option value="6">Mountain</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="container columnFlex child">
+                            <label for="waterSource">Nearby Water Source? </label>
+                            <select name="waterSource" id="waterSource">
+                                <option value="">Select</option>
+                                <option value="1">River</option>
+                                <option value="2">Lake</option>
+                                <option value="3">Pond</option>
+                                <option value="4">Canal</option>
+                                <option value="5">Reservoir</option>
+                                <option value="6">None</option>
+                            </select>
+                        </fieldset>
+                        <fieldset class="container columnFlex child">
+                            <label for="humanDisturbance">Human Disturbances: </label>
+                            <select name="humanDisturbance" id="humanDisturbance">
+                                <option value="">Select</option>
+                                <option value="1">Construction</option>
+                                <option value="2">Traffic</option>
+                                <option value="3">Pollution</option>
+                                <option value="4">Hunting</option>
+                                <option value="5">None</option>
+                            </select>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <hr>
+                <fieldset id="migrationIndo">
+                    <legend>Migration Details</legend>
+                    <div class="container columnFlex">
+                        <fieldset>
+                            <label for="isMigratory">Is the bird species migratory? </label>
+                            <label for="yes"><input type="radio" name="isMigratory" id="yes" class="inline ">
+                                Yes</label>
+                            <label for="no"><input type="radio" name="isMigratory" id="no" class="inline "> No</label>
+                            <label for="notSure"><input type="radio" name="isMigratory" id="notSure" class="inline ">
+                                Not
+                                Sure</label>
+                        </fieldset>
+                        <fieldset>
+                            <label for="direction">Direction of Flight: </label>
+                            <label for="north"><input type="radio" name="direction" id="north" class="inline ">
+                                North</label>
+                            <label for="south"><input type="radio" name="direction" id="south" class="inline ">
+                                South</label>
+                            <label for="east"><input type="radio" name="direction" id="east" class="inline ">
+                                East</label>
+                            <label for="west"><input type="radio" name="direction" id="west" class="inline ">
+                                West</label>
+                        </fieldset>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend>Season of Arrival</legend>
+                    <label for="arrival-winter"><input type="radio" name="arrival-season" id="arrival-winter"
+                            class="inline">
+                        Winter</label>
+                    <label for="arrival-summer"><input type="radio" name="arrival-season" id="arrival-summer"
+                            class="inline">
+                        Summer</label>
+                    <label for="arrival-monsoon"><input type="radio" name="arrival-season" id="arrival-monsoon"
+                            class="inline">
+                        Monsoon</label>
+                    <label for="arrival-autumn"><input type="radio" name="arrival-season" id="arrival-autumn"
+                            class="inline">
+                        Autumn</label>
+                </fieldset>
+                <fieldset>
+                    <legend>Season of Departure</legend>
+                    <label for="depart-winter"><input type="radio" name="departure-season" id="depart-winter"
+                            class="inline">
+                        winter</label>
+                    <label for="depart-summer"><input type="radio" name="departure-season" id="depart-summer"
+                            class="inline">
+                        summer</label>
+                    <label for="depart-monsoon"><input type="radio" name="departure-season" id="depart-monsoon"
+                            class="inline">
+                        Monsoon</label>
+                    <label for="depart-autumn"><input type="radio" name="departure-season" id="depart-autumn"
+                            class="inline">
+                        Autumn</label>
+                </fieldset>
+                <hr>
+                <fieldset>
+                    <legend>Media Upload: Upload Photos/Videos</legend>
+                    <p>(optional but <em>encouraged</em>)</p>
+                    <input type="file" name="photoVideo" id="photoVideo">
+                </fieldset>
+                <label for="additionalInfo">Additional Comments (if any)</label>
+                <textarea name="additionalInfo" id="additionalInfo"
+                    placeholder="Did you notice anything rare or unexpected?" rows="2" cols="30"></textarea>
+
+                <div class="container child">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                </div>
+            </form>
+        </section>
+        <section class="main-content">
+            <div class="circleBG">
+                <div class="heading">
+                    <h2>The Indian Gauraiya (House Sparrow)</h2>
+                    <h3>(Passer domesticus indicus)</h3>
+                </div>
+                <p><strong><em>Gauraiya</em></strong> is a small, social bird commonly found in urban and rural areas
+                    across
+                    India. It has a stout body, brownish-grey plumage, and a short, conical beak suited for seed-eating.
+                    Known for its close association with human settlements, the Gauraiya builds nests in homes,
+                    buildings,
+                    and crevices. Once abundant, its population has declined due to habitat loss, pollution, and
+                    changing
+                    urban landscapes. Despite this, conservation efforts aim to protect this familiar and cherished
+                    bird,
+                    which holds cultural significance in Indian folklore and daily life.</p>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
