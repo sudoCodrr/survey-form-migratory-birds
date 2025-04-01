@@ -11,49 +11,68 @@
 <body>
     <header>
         <h1>Survey - Migrating birds in Uttar Pradesh</h1>
-        <p>Please fill out this form with the required information</p>
     </header>
 
     <main>
-        <section class="main-content">
+        <section id="formSection">
             <form action="">
                 <fieldset>
                     <legend>Observer's Info</legend>
-                    <label for="name">Full Name: <input type="text" placeholder="Enter your name" id="name"
-                            required></label>
-                    <label for="phone">Mobile No: <input type="tel" placeholder="Enter your mobile number"
-                            id="phone"></label>
-                    <label for="email">Email: <input type="email" placeholder="Enter your email" id="email"></label>
-                    <label for="date-time">Date and Time of Observation: <input type="datetime-local"
-                            placeholder="Enter the date and time of observation" id="date-time"></label>
+                    <div class="grid-container">
+
+                        <div>
+                            <label for="name">Full Name: </label>
+                            <input type="text" placeholder="Enter your name" id="name" required>
+                        </div>
+                        <div>
+                            <label for="email">Email: </label>
+                            <input type="email" placeholder="Enter your email" id="email">
+                        </div>
+                        <div>
+                            <label for="phone">Mobile No: </label>
+                            <input type="tel" placeholder="Enter your mobile number" id="phone">
+                        </div>
+                    </div>
                 </fieldset>
-                <div class="container">
-                    <fieldset>
-                        <label for="weather">Weather Conditions: </label>
-                        <select name="weather" id="weather">
-                            <option value="">Select weather</option>
-                            <option value="1">Sunny</option>
-                            <option value="2">Cloudy</option>
-                            <option value="3">Rainy</option>
-                            <option value="4">Foggy</option>
-                            <option value="5">Rainy</option>
-                        </select>
-                    </fieldset>
-                    <fieldset id="tempContainer">
-                        <label for="temp" class="block">Temperature: </label>
-                        <input type="number" name="temp" id="temp" min=-7 max=122 value="0" class="inline">
-                        <select name="tempUnit" id="tempUnit" class="inline">
-                            <option value="c">C</option>
-                            <option value="f">F</option>
-                        </select>
-                    </fieldset>
-                </div>
-                <hr>
+
                 <fieldset id="speciesInfo">
+                    <legend>Event Detail</legend>
+                    <div class="grid-container">
+                        <div>
+                            <label for="weather">Weather Conditions: </label>
+                            <select name="weather" id="weather">
+                                <option value="">Select weather</option>
+                                <option value="1">Sunny</option>
+                                <option value="2">Cloudy</option>
+                                <option value="3">Rainy</option>
+                                <option value="4">Foggy</option>
+                                <option value="5">Rainy</option>
+                            </select>
+                        </div>
+                        <div id="tempFields">
+                            <label for="temp">Temperature: </label>
+                            <input type="number" name="temp" id="temp" min=-7 max=122 value="0">
+                            <select name="tempUnit" id="tempUnit">
+                                <option value="c">C</option>
+                                <option value="f">F</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="date-time">Date/Time of Observation: </label>
+                            <input type="datetime-local" placeholder="Enter the date and time of observation"
+                                id="date-time">
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
                     <legend>Bird Species Details</legend>
-                    <label for="birdName">Common Name of bird: <input type="text" name="birdName" id="birdName"></label>
-                    <div class="container alignTop">
-                        <fieldset>
+                    <div class=" grid-container">
+                        <div>
+                            <label for="birdName">Bird's Common Name:</label>
+                            <input type="text" name="birdName" id="birdName" placeholder="Enter common name of bird">
+                        </div>
+                        <div>
                             <label for="count">Number of Birds Observed: </label>
                             <select name="count" id="count">
                                 <option value="">Select count</option>
@@ -62,34 +81,41 @@
                                 <option value="3">20 - 50</option>
                                 <option value="4">&gt; 50</option>
                             </select>
-                        </fieldset>
-                        <fieldset>
-                            <label for="physicalInfo">Color and Physical Features</label>
+                        </div>
+                        <div>
+                            <label for="physicalInfo">Color and Physical Features </label>
                             <textarea name="physicalInfo" id="physicalInfo"
                                 placeholder="Describe physical appearance of the birds sighted" rows="3"></textarea>
-                        </fieldset>
+                        </div>
+                        <div class="radio-Container">
+                            <label for="behaviour" class="form-subHeading">Bird Behavior</label>
+
+                            <div class="radioOption">
+                                <input type="radio" name="behavior" id="flying" value="Flying">
+                                <label for="flying">Flying</label>
+                            </div>
+
+                            <div class="radioOption">
+                                <input type="radio" name="behavior" id="resting" value="Resting">
+                                <label for="resting">Resting</label>
+                            </div>
+
+                            <div class="radioOption">
+                                <input type="radio" name="behavior" id="feeding" value="Feeding">
+                                <label for="feeding"> Feeding</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="behavior" id="nesting" value="Nesting">
+                                <label for="nesting"> Nesting</label>
+                            </div>
+                        </div>
                     </div>
-                    <fieldset id="birdBehavior">
-                        <legend>Bird Behavior</legend>
-                        <label for="flying"><input type="radio" name="behavior" id="flying" value="Flying"
-                                class="inline">
-                            Flying</label>
-                        <label for="resting">
-                            <input type="radio" name="behavior" id="resting" value="Resting" class="inline">
-                            Resting</label>
-                        <label for="feeding">
-                            <input type="radio" name="behavior" id="feeding" value="Feeding" class="inline">
-                            Feeding</label>
-                        <label for="nesting"><input type="radio" name="behavior" id="nesting" value="Nesting"
-                                class="inline">
-                            Nesting</label>
-                    </fieldset>
                 </fieldset>
-                <hr>
+
                 <fieldset id="habitatInfo">
                     <legend>Habitat Information</legend>
-                    <div class="container alignTop">
-                        <fieldset class="container columnFlex child">
+                    <div class="grid-container">
+                        <div>
                             <label for="habitat">Type of Habitat? </label>
                             <select name="habitat" id="habitat">
                                 <option value="">Select</option>
@@ -100,8 +126,9 @@
                                 <option value="5">Agricultural Land</option>
                                 <option value="6">Mountain</option>
                             </select>
-                        </fieldset>
-                        <fieldset class="container columnFlex child">
+                        </div>
+
+                        <div>
                             <label for="waterSource">Nearby Water Source? </label>
                             <select name="waterSource" id="waterSource">
                                 <option value="">Select</option>
@@ -112,8 +139,8 @@
                                 <option value="5">Reservoir</option>
                                 <option value="6">None</option>
                             </select>
-                        </fieldset>
-                        <fieldset class="container columnFlex child">
+                        </div>
+                        <div>
                             <label for="humanDisturbance">Human Disturbances: </label>
                             <select name="humanDisturbance" id="humanDisturbance">
                                 <option value="">Select</option>
@@ -123,97 +150,122 @@
                                 <option value="4">Hunting</option>
                                 <option value="5">None</option>
                             </select>
-                        </fieldset>
+                        </div>
                     </div>
                 </fieldset>
-                <hr>
+
                 <fieldset id="migrationIndo">
                     <legend>Migration Details</legend>
-                    <div class="container columnFlex">
-                        <fieldset>
-                            <label for="isMigratory">Is the bird species migratory? </label>
-                            <label for="yes"><input type="radio" name="isMigratory" id="yes" class="inline ">
-                                Yes</label>
-                            <label for="no"><input type="radio" name="isMigratory" id="no" class="inline "> No</label>
-                            <label for="notSure"><input type="radio" name="isMigratory" id="notSure" class="inline ">
-                                Not
-                                Sure</label>
-                        </fieldset>
-                        <fieldset>
-                            <label for="direction">Direction of Flight: </label>
-                            <label for="north"><input type="radio" name="direction" id="north" class="inline ">
-                                North</label>
-                            <label for="south"><input type="radio" name="direction" id="south" class="inline ">
-                                South</label>
-                            <label for="east"><input type="radio" name="direction" id="east" class="inline ">
-                                East</label>
-                            <label for="west"><input type="radio" name="direction" id="west" class="inline ">
-                                West</label>
-                        </fieldset>
+                    <div class="grid-container">
+                        <div class="radio-Container">
+                            <label for="isMigratory" class="form-subHeading">Is the bird species migratory? </label>
+                            <div class="radioOption">
+                                <input type="radio" name="isMigratory" id="yes">
+                                <label for="yes">Yes</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="isMigratory" id="no">
+                                <label for="no">No</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="isMigratory" id="notSure">
+                                <label for="notSure">Not
+                                    Sure</label>
+                            </div>
+                        </div>
+                        <div class="radio-Container">
+                            <label for="direction" class="form-subHeading">Direction of Flight: </label>
+                            <div class="radioOption">
+                                <input type="radio" name="direction" id="north">
+                                <label for="north">North</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="direction" id="south">
+                                <label for="south">South</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="direction" id="east">
+                                <label for="east"> East</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="direction" id="west">
+                                <label for="west">West</label>
+                            </div>
+                        </div>
+                        <div class="radio-Container">
+                            <label class="form-subHeading">Season of Arrival</label>
+
+                            <div class="radioOption">
+                                <input type="radio" name="arrival-season" id="arrival-winter">
+                                <label for="arrival-winter">Winter</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="arrival-season" id="arrival-summer">
+                                <label for="arrival-summer"> Summer</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="arrival-season" id="arrival-monsoon">
+                                <label for="arrival-monsoon">Monsoon</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="arrival-season" id="arrival-autumn">
+                                <label for="arrival-autumn">Autumn</label>
+                            </div>
+                        </div>
+                        <div class="radio-Container">
+                            <label class="form-subHeading">Season of Departure</label>
+                            <div class="radioOption">
+                                <input type="radio" name="departure-season" id="depart-winter">
+                                <label for="depart-winter">Winter</label>
+                            </div>
+
+                            <div class="radioOption">
+                                <input type="radio" name="departure-season" id="depart-summer">
+                                <label for="depart-summer">Summer</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="departure-season" id="depart-monsoon">
+                                <label for="depart-monsoon">Monsoon</label>
+                            </div>
+                            <div class="radioOption">
+                                <input type="radio" name="departure-season" id="depart-autumn">
+                                <label for="depart-autumn">Autumn</label>
+                            </div>
+                        </div>
                     </div>
                 </fieldset>
-                <fieldset>
-                    <legend>Season of Arrival</legend>
-                    <label for="arrival-winter"><input type="radio" name="arrival-season" id="arrival-winter"
-                            class="inline">
-                        Winter</label>
-                    <label for="arrival-summer"><input type="radio" name="arrival-season" id="arrival-summer"
-                            class="inline">
-                        Summer</label>
-                    <label for="arrival-monsoon"><input type="radio" name="arrival-season" id="arrival-monsoon"
-                            class="inline">
-                        Monsoon</label>
-                    <label for="arrival-autumn"><input type="radio" name="arrival-season" id="arrival-autumn"
-                            class="inline">
-                        Autumn</label>
-                </fieldset>
-                <fieldset>
-                    <legend>Season of Departure</legend>
-                    <label for="depart-winter"><input type="radio" name="departure-season" id="depart-winter"
-                            class="inline">
-                        winter</label>
-                    <label for="depart-summer"><input type="radio" name="departure-season" id="depart-summer"
-                            class="inline">
-                        summer</label>
-                    <label for="depart-monsoon"><input type="radio" name="departure-season" id="depart-monsoon"
-                            class="inline">
-                        Monsoon</label>
-                    <label for="depart-autumn"><input type="radio" name="departure-season" id="depart-autumn"
-                            class="inline">
-                        Autumn</label>
-                </fieldset>
-                <hr>
+
                 <fieldset>
                     <legend>Media Upload: Upload Photos/Videos</legend>
                     <p>(optional but <em>encouraged</em>)</p>
                     <input type="file" name="photoVideo" id="photoVideo">
                 </fieldset>
-                <label for="additionalInfo">Additional Comments (if any)</label>
-                <textarea name="additionalInfo" id="additionalInfo"
-                    placeholder="Did you notice anything rare or unexpected?" rows="2" cols="30"></textarea>
 
-                <div class="container child">
+                <fieldset>
+                    <label for="additionalInfo">Additional Comments (if any)</label>
+                    <textarea name="additionalInfo" id="additionalInfo"
+                        placeholder="Did you notice anything rare or unexpected?" rows="2" cols="30"></textarea>
+                </fieldset>
+
+                <div class="flex-container">
                     <button type="reset">Reset</button>
                     <button type="submit">Submit</button>
                 </div>
             </form>
         </section>
-        <section class="main-content">
-            <div class="circleBG">
-                <div class="heading">
-                    <h2>The Indian Gauraiya (House Sparrow)</h2>
-                    <h3>(Passer domesticus indicus)</h3>
-                </div>
-                <p><strong><em>Gauraiya</em></strong> is a small, social bird commonly found in urban and rural areas
-                    across
-                    India. It has a stout body, brownish-grey plumage, and a short, conical beak suited for seed-eating.
-                    Known for its close association with human settlements, the Gauraiya builds nests in homes,
-                    buildings,
-                    and crevices. Once abundant, its population has declined due to habitat loss, pollution, and
-                    changing
-                    urban landscapes. Despite this, conservation efforts aim to protect this familiar and cherished
-                    bird,
-                    which holds cultural significance in Indian folklore and daily life.</p>
+        <section id="contentSection">
+            <div class="text-container">
+                <h2>🌿Migratory Birds of Uttar Pradesh 🦜</h2>
+                <p>Every year, thousands of migratory birds travel vast distances to escape harsh winters and find food
+                    and shelter in Uttar Pradesh’s rich wetlands, forests, and riverbanks. Birds like the Siberian
+                    Crane, Bar-headed Goose, Northern Pintail, and Greater Flamingo make their seasonal journey from
+                    regions as far as Siberia, Central Asia, and Europe to India.
+                </p>
+                <p>These birds play a vital role in maintaining ecological balance and biodiversity. However, habitat
+                    loss and climate change pose significant threats to their migration patterns. Your participation in
+                    this survey will help in understanding their presence and contribute to conservation efforts.</p>
+                <h3>📌 Take a moment to share your observations and support bird conservation! 🕊️</h3>
+                <a href="#formSection"><button>Begin Survey 🦜</button></a>
             </div>
         </section>
     </main>
