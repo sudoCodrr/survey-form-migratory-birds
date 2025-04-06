@@ -1,9 +1,9 @@
 :root {
-  --fs-main-heading: 2.6rem;
-  --fs-heading-large: 1.95rem;
+  --fs-main-heading: 2.75rem;
+  --fs-heading-large: 1.75rem;
   --fs-heading-medium: 1.5rem;
-  --fs-para: 1.18rem;
-  --fs-para-small: 0.8rem;
+  --fs-para: 1rem;
+  --fs-para-small: 0.75rem;
 }
 * {
   margin: 0;
@@ -11,7 +11,6 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 body {
   width: 100vw;
   min-height: 100vh;
@@ -52,28 +51,30 @@ section {
   justify-content: center;
   min-height: 100vh;
   width: 100%;
-  padding: 2vw;
 }
-
+#formSection {
+  padding: 3vw;
+}
 #contentSection {
-  padding-top: 5vw;
+  padding-top: 3vw;
 }
 .text-container {
-  width: 85vw;
-  height: 85vw;
-  max-width: 45rem;
-  max-height: 45rem;
+  width: 92vw;
+  height: 92vw;
+  padding: 4vw;
+  max-width: 80vh;
+  max-height: 80vh;
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   flex-wrap: nowrap;
   border-radius: 50%;
-  gap: 2vw;
+  gap: 20px;
   background: radial-gradient(circle, #735f22, #594400d4, #000000e6);
   color: white;
   text-align: center;
-  padding: 1vw 5vw;
+  padding: 4vw;
   outline: 10px groove #8f7423;
 }
 .text-container h2 {
@@ -85,6 +86,11 @@ section {
 }
 .text-container p {
   font-size: var(--fs-para);
+}
+.text-container h2,
+h3,
+p {
+  line-height: 1;
 }
 .text-container button {
   padding: 10px 20px;
@@ -102,9 +108,8 @@ section {
 }
 
 form {
-  width: 90%;
+  width: 95%;
   max-width: 40rem;
-  margin: auto;
   background: linear-gradient(226deg, #141412, #89773ccc, #141412);
   border-radius: 10px;
   padding: 1em;
@@ -248,35 +253,46 @@ button:active {
 #tempFields select {
   width: max-content;
 }
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1025px) {
   :root {
-    --fs-main-heading: 2.2rem;
-    --fs-heading-large: 1.85rem;
-    --fs-heading-medium: 1.25rem;
+    --fs-main-heading: 4vw;
+    --fs-heading-large: 1.65rem;
+    --fs-heading-medium: 1.05rem;
     --fs-para: 1.05rem;
-    --fs-para-small: 0.8rem;
+    --fs-para-small: 0.6rem;
   }
 }
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 769px) {
+  :root {
+    --fs-main-heading: 4vw;
+    --fs-heading-large: 3.5vw;
+    --fs-heading-medium: 3vw;
+    --fs-para: 2.5vw;
+    --fs-para-small: 1.95vw;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  :root {
+    --fs-main-heading: 8vw;
+    --fs-heading-large: 5.5vw;
+    --fs-heading-medium: 4.5vw;
+    --fs-para: 4vw;
+    --fs-para-small: 3vw;
+  }
   .grid-container {
     grid-template-columns: 1fr;
   }
-  :root {
-    --fs-main-heading: 1.8rem;
-    --fs-heading-large: 1.35rem;
-    --fs-heading-medium: 1rem;
-    --fs-para: 0.85rem;
-    --fs-para-small: 0.58rem;
+  #contentSection {
+    justify-content: flex-end;
+    padding-bottom: 8vh;
   }
-}
-
-@media screen and (max-width: 550px) {
   .text-container {
     border-radius: 15px;
     min-height: max-content;
-    gap: 3vw;
-    padding: 5vw;
+  }
+  .text-container h2 {
+    width: 100%;
   }
   input::file-selector-button {
     width: 100%;
